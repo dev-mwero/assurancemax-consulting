@@ -25,7 +25,7 @@ export function Hero() {
               render={<Link href="/contact" />}
               size="lg"
               nativeButton={false}
-              className="bg-secondary text-white hover:bg-secondary/90"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
             >
               Book a Consultation
               <ArrowRight className="size-4" />
