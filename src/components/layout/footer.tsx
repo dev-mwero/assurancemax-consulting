@@ -134,7 +134,7 @@ export function Footer() {
 					href="https://labs.mwenaro.com"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="inline-flex items-center gap-2 text-xs text-white/40 hover:text-secondary transition-colors duration-200"
+					className="inline-flex items-center gap-2 text-xs text-white/40 hover:text-secondary transition-all duration-300 hover:scale-105 animate-pulse-glow"
 				>
 					Designed &amp; engineered by
 					<Image
