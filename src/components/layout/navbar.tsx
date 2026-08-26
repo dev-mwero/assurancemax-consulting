@@ -108,7 +108,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button render={<Link href="/contact" />} size="lg">
+          <Button render={<Link href="/contact" />} size="lg" nativeButton={false}>
             Book a Consultation
           </Button>
         </div>
@@ -173,6 +173,7 @@ export function Navbar() {
                     render={<Link href="/contact" />}
                     className="w-full"
                     size="lg"
+                    nativeButton={false}
                   >
                     Book a Consultation
                   </Button>

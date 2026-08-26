@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
               Contact us to discuss how this service can help your organisation.
             </p>
           </div>
-          <Button render={<Link href="/contact" />} size="lg">
+          <Button render={<Link href="/contact" />} size="lg" nativeButton={false}>
             Get in Touch
           </Button>
         </div>

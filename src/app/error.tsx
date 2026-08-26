@@ -27,7 +27,7 @@ export default function Error({
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Button onClick={() => reset()}>Try Again</Button>
-          <Button render={<Link href="/" />} variant="outline">
+          <Button render={<Link href="/" />} variant="outline" nativeButton={false}>
             Go Home
           </Button>
         </div>

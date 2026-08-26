@@ -24,6 +24,7 @@ export function ServicesOverview() {
         <Button
           render={<Link href="/services" />}
           variant="outline"
+          nativeButton={false}
           className="shrink-0 self-start sm:self-auto"
         >
           View All Services

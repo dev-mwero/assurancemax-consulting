@@ -15,7 +15,7 @@ export default function NotFound() {
           Sorry, we could not find the page you are looking for. It may have
           been moved or does not exist.
         </p>
-        <Button render={<Link href="/" />} className="mt-6">
+        <Button render={<Link href="/" />} className="mt-6" nativeButton={false}>
           Go to Homepage
         </Button>
       </div>

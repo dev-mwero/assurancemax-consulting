@@ -24,6 +24,7 @@ export function Hero() {
             <Button
               render={<Link href="/contact" />}
               size="lg"
+              nativeButton={false}
               className="bg-secondary text-white hover:bg-secondary/90"
             >
               Book a Consultation
@@ -33,6 +34,7 @@ export function Hero() {
               render={<Link href="/services" />}
               variant="outline"
               size="lg"
+              nativeButton={false}
               className="border-white/20 text-white hover:bg-white/10"
             >
               Explore Our Services
