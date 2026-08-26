@@ -136,7 +136,7 @@ export function Footer() {
 					rel="noopener noreferrer"
 					className="inline-flex items-center gap-2 text-xs text-white/40 hover:text-secondary transition-colors duration-200"
 				>
-					Built and Managed by
+					Designed &amp; engineered by
 					<Image
 						src="/mwenaro-logo.png"
 						alt="Mwenaro Labs"
