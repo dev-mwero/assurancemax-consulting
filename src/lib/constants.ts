@@ -11,7 +11,6 @@ export const siteConfig = {
 export const contactInfo = {
   email: "info@assurancemaxconsult.co.ke",
   phone: "+254 733 538 538",
-  phoneSecondary: "+254 733 538 538",
   address: {
     street: "Nairobi CBD",
     city: "Nairobi",
