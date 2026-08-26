@@ -4,16 +4,16 @@ export const siteConfig = {
   slogan: "Where Expertise Inspires Confidence",
   description:
     "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation.",
-  url: process.env.NNEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   locale: "en_KE",
 } as const;
 
 export const contactInfo = {
-  email: "[your-email@assurancemax.com]",
-  phone: "[+254 XXX XXX XXX]",
-  phoneSecondary: "[+254 XXX XXX XXX]",
+  email: "info@assurancemaxconsult.co.ke",
+  phone: "+254 733 538 538",
+  phoneSecondary: "+254 733 538 538",
   address: {
-    street: "[Your Office Address]",
+    street: "Nairobi CBD",
     city: "Nairobi",
     country: "Kenya",
   },
