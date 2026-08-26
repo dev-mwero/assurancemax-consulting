@@ -9,7 +9,7 @@ export const siteConfig = {
 } as const;
 
 export const contactInfo = {
-  email: "info@assurancemaxconsult.co.ke",
+  email: "info@assurancemax.co.ke",
   phone: "+254 733 538 538",
   phoneSecondary: "",
   address: {

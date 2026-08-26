@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CoreValues } from "@/components/marketing/core-values";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { PageHeader } from "@/components/sections/page-header";
@@ -20,24 +21,36 @@ export default function AboutPage() {
       />
 
       <SectionWrapper>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-foreground">Who We Are</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            AssuranceMax Consulting Ltd is a professional consulting firm
-            specialising in financial management, accounting, governance,
-            compliance, business advisory, and business transformation.
-          </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            We work with organisations that need professional support to improve
-            their financial processes, strengthen governance, meet statutory
-            obligations, and prepare for sustainable growth.
-          </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our approach is practical and client-focused. We listen first,
-            understand your specific situation, and then provide recommendations
-            that can actually be implemented within your organisation&apos;s
-            capacity and resources.
-          </p>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold text-foreground">Who We Are</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              AssuranceMax Consulting Ltd is a professional consulting firm
+              specialising in financial management, accounting, governance,
+              compliance, business advisory, and business transformation.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We work with organisations that need professional support to improve
+              their financial processes, strengthen governance, meet statutory
+              obligations, and prepare for sustainable growth.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Our approach is practical and client-focused. We listen first,
+              understand your specific situation, and then provide recommendations
+              that can actually be implemented within your organisation&apos;s
+              capacity and resources.
+            </p>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl">
+            <Image
+              src="/images/about-consultant.jpg"
+              alt="AssuranceMax principal consultant"
+              width={800}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+          </div>
         </div>
       </SectionWrapper>
 

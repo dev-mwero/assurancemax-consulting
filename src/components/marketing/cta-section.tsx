@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Reveal } from "@/components/sections/reveal";
@@ -13,6 +14,17 @@ const benefits = [
 export function CTASection() {
 	return (
 		<SectionWrapper className="relative overflow-hidden bg-primary">
+			{/* Background image */}
+			<div className="absolute inset-0">
+				<Image
+					src="/images/cta-handshake.jpg"
+					alt=""
+					width={1200}
+					height={600}
+					className="w-full h-full object-cover opacity-20"
+				/>
+				<div className="absolute inset-0 bg-primary/80" />
+			</div>
 			<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--secondary)_0%,transparent_50%)] opacity-10" />
 			<div className="absolute -top-32 -right-32 size-96 rounded-full bg-secondary/10 blur-3xl animate-pulse-glow" />
 			<div className="relative mx-auto max-w-3xl text-center">

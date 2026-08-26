@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 type BreadcrumbItem = {
@@ -19,6 +20,16 @@ export function PageHeader({
 }: PageHeaderProps) {
 	return (
 		<div className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/90 border-b">
+			{/* Background image */}
+			<div className="absolute inset-0">
+				<Image
+					src="/images/page-header-bg.jpg"
+					alt=""
+					width={1600}
+					height={600}
+					className="w-full h-full object-cover opacity-10"
+				/>
+			</div>
 			<div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:3rem_3rem]" />
 			<div className="absolute -top-20 -right-20 size-72 rounded-full bg-secondary/10 blur-3xl animate-pulse-glow" />
 			<div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
