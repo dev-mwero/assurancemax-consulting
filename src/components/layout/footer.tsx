@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/layout/logo";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
@@ -124,15 +125,28 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-					<p className="text-xs text-white/40">
-						&copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-						reserved.
-					</p>
-					<p className="text-xs text-white/40 italic">
-						{siteConfig.slogan}
-					</p>
-				</div>
+			<div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+				<p className="text-xs text-white/40">
+					&copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+					reserved.
+				</p>
+				<a
+					href="https://labs.mwenaro.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center gap-2 text-xs text-white/40 hover:text-secondary transition-colors duration-200"
+				>
+					Built by
+					<Image
+						src="/mwenaro-logo.png"
+						alt="Mwenaro Labs"
+						width={20}
+						height={20}
+						className="rounded-sm"
+					/>
+					Mwenaro Labs
+				</a>
+			</div>
 			</div>
 		</footer>
 	);
