@@ -101,6 +101,17 @@ export default function ContactPage() {
                     >
                       {contactInfo.phone}
                     </a>
+                    {contactInfo.phoneSecondary && (
+                      <>
+                        <br />
+                        <a
+                          href={`tel:${contactInfo.phoneSecondary}`}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          {contactInfo.phoneSecondary}
+                        </a>
+                      </>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
