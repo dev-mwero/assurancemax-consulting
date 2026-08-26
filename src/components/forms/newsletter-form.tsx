@@ -8,102 +8,103 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  type NewsletterInput,
-  NewsletterSchema,
+	type NewsletterInput,
+	NewsletterSchema,
 } from "@/lib/validations/newsletter";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
 export function NewsletterForm() {
-  const [formState, setFormState] = useState<FormState>("idle");
+	const [formState, setFormState] = useState<FormState>("idle");
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<NewsletterInput>({
-    resolver: zodResolver(NewsletterSchema),
-  });
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm<NewsletterInput>({
+		resolver: zodResolver(NewsletterSchema),
+	});
 
-  async function onSubmit(_data: NewsletterInput) {
-    setFormState("loading");
+	async function onSubmit(_data: NewsletterInput) {
+		setFormState("loading");
 
-    try {
-      const response = await fetch("/api/v1/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(_data),
-      });
+		try {
+			const response = await fetch("/api/v1/newsletter", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(_data),
+			});
 
-      const result = await response.json();
+			const result = await response.json();
 
-      if (!response.ok || !result.success) {
-        throw new Error(
-          result.error?.message || "Something went wrong. Please try again.",
-        );
-      }
+			if (!response.ok || !result.success) {
+				throw new Error(
+					result.error?.message || "Something went wrong. Please try again.",
+				);
+			}
 
-      setFormState("success");
-      reset();
-    } catch {
-      setFormState("error");
-    }
-  }
+			setFormState("success");
+			reset();
+		} catch {
+			setFormState("error");
+		}
+	}
 
-  if (formState === "success") {
-    return (
-      <div className="flex items-center gap-2 text-sm text-secondary">
-        <CheckCircle className="size-4" />
-        Thank you for subscribing.
-      </div>
-    );
-  }
+	if (formState === "success") {
+		return (
+			<div className="flex items-center gap-2 text-sm text-secondary animate-fade-in-up">
+				<CheckCircle className="size-4" />
+				Thank you for subscribing.
+			</div>
+		);
+	}
 
-  return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-3 sm:flex-row"
-      noValidate
-    >
-      <div className="flex-1">
-        <Label htmlFor="newsletter-email" className="sr-only">
-          Email address
-        </Label>
-        <Input
-          id="newsletter-email"
-          type="email"
-          {...register("email")}
-          placeholder="Enter your email"
-          aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? "newsletter-error" : undefined}
-        />
-        {errors.email && (
-          <p id="newsletter-error" className="mt-1 text-xs text-destructive">
-            {errors.email.message}
-          </p>
-        )}
-      </div>
-      <Button
-        type="submit"
-        disabled={formState === "loading"}
-        className="shrink-0"
-      >
-        {formState === "loading" ? (
-          <Loader2 className="size-4 animate-spin" />
-        ) : (
-          <>
-            <Send className="size-4" />
-            Subscribe
-          </>
-        )}
-      </Button>
-      {formState === "error" && (
-        <div className="flex items-center gap-2 text-xs text-destructive">
-          <AlertCircle className="size-3.5" />
-          Please try again.
-        </div>
-      )}
-    </form>
-  );
+	return (
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className="flex flex-col gap-3 sm:flex-row"
+			noValidate
+		>
+			<div className="flex-1">
+				<Label htmlFor="newsletter-email" className="sr-only">
+					Email address
+				</Label>
+				<Input
+					id="newsletter-email"
+					type="email"
+					{...register("email")}
+					placeholder="Enter your email"
+					aria-invalid={!!errors.email}
+					aria-describedby={errors.email ? "newsletter-error" : undefined}
+					className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-secondary"
+				/>
+				{errors.email && (
+					<p id="newsletter-error" className="mt-1 text-xs text-destructive">
+						{errors.email.message}
+					</p>
+				)}
+			</div>
+			<Button
+				type="submit"
+				disabled={formState === "loading"}
+				className="shrink-0 bg-secondary text-secondary-foreground"
+			>
+				{formState === "loading" ? (
+					<Loader2 className="size-4 animate-spin" />
+				) : (
+					<>
+						<Send className="size-4" />
+						Subscribe
+					</>
+				)}
+			</Button>
+			{formState === "error" && (
+				<div className="flex items-center gap-2 text-xs text-destructive">
+					<AlertCircle className="size-3.5" />
+					Please try again.
+				</div>
+			)}
+		</form>
+	);
 }
