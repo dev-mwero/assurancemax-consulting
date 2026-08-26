@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "@/components/forms/contact-form";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
@@ -54,6 +55,18 @@ export default function ContactPage() {
       />
 
       <SectionWrapper>
+        {/* Office photo */}
+        <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl mb-12">
+          <Image
+            src="/images/contact-office.jpg"
+            alt="AssuranceMax office in Nairobi CBD"
+            width={1200}
+            height={400}
+            className="w-full h-48 sm:h-64 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </div>
+
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <h2 className="text-2xl font-bold text-foreground">

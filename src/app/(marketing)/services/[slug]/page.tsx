@@ -1,5 +1,6 @@
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CTASection } from "@/components/marketing/cta-section";
@@ -48,6 +49,18 @@ export default async function ServicePage({ params }: Props) {
       />
 
       <SectionWrapper>
+        {/* Service hero image */}
+        <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl mb-12">
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={1200}
+            height={400}
+            className="w-full h-48 sm:h-64 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </div>
+
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold text-foreground">Benefits</h2>

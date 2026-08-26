@@ -4,6 +4,7 @@ export type Service = {
   slug: string;
   description: string;
   icon: string;
+  image: string;
   benefits: string[];
   features: string[];
 };

@@ -8,6 +8,7 @@ export const services: Service[] = [
     description:
       "Maintain accurate, reliable financial records that give you a clear picture of your business performance.",
     icon: "Calculator",
+    image: "/images/service-accounting.jpg",
     benefits: [
       "Accurate financial records maintained consistently",
       "Clear visibility into business performance",
@@ -31,6 +32,7 @@ export const services: Service[] = [
     description:
       "Gain better visibility and control over your finances with structured reporting, budgeting, and analysis.",
     icon: "ChartNoAxesCombined",
+    image: "/images/service-financial.jpg",
     benefits: [
       "Better visibility into financial performance",
       "Informed decision-making based on accurate data",
@@ -54,6 +56,7 @@ export const services: Service[] = [
     description:
       "Understand and manage your tax obligations with confidence. We help you stay compliant and plan effectively.",
     icon: "FileText",
+    image: "/images/service-tax.jpg",
     benefits: [
       "Reduced risk of penalties and interest",
       "Clear understanding of tax obligations",
@@ -77,6 +80,7 @@ export const services: Service[] = [
     description:
       "Ensure accurate, timely payroll processing with full compliance with statutory requirements.",
     icon: "Users",
+    image: "/images/service-payroll.jpg",
     benefits: [
       "Accurate payroll processed on time, every time",
       "Full compliance with statutory requirements",
@@ -100,6 +104,7 @@ export const services: Service[] = [
     description:
       "Strengthen accountability, improve processes, and build robust internal control systems.",
     icon: "ShieldCheck",
+    image: "/images/service-governance.jpg",
     benefits: [
       "Stronger accountability across the organisation",
       "Reduced risk of fraud and errors",
@@ -123,6 +128,7 @@ export const services: Service[] = [
     description:
       "Improve performance, navigate change, and prepare your organisation for sustainable growth.",
     icon: "BriefcaseBusiness",
+    image: "/images/service-advisory.jpg",
     benefits: [
       "Clear strategy aligned to business objectives",
       "Improved operational efficiency",
@@ -146,6 +152,7 @@ export const services: Service[] = [
     description:
       "Prepare for audits with confidence. We help organise your financial records and support the audit process.",
     icon: "Scale",
+    image: "/images/service-audit.jpg",
     benefits: [
       "Smooth, well-prepared audit process",
       "Organised financial records ready for review",
