@@ -86,30 +86,32 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-muted/30">
+      <SectionWrapper className="bg-primary">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-foreground">
+            <h2 className="text-xl font-bold text-white">
               Interested in {service.title.toLowerCase()}?
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm text-white/70">
               Contact us to discuss how this service can help your organisation.
             </p>
           </div>
-          <Button render={<Link href="/contact" />} size="lg" nativeButton={false}>
+          <Button render={<Link href="/contact" />} size="lg" nativeButton={false} className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
             Get in Touch
           </Button>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper>
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="size-4" />
-          Back to all services
-        </Link>
+      <SectionWrapper className="bg-muted/30">
+        <div className="flex items-center justify-between">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="size-4" />
+            Back to all services
+          </Link>
+        </div>
       </SectionWrapper>
 
       <CTASection />

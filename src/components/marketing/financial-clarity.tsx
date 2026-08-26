@@ -37,7 +37,7 @@ const steps = [
 
 export function FinancialClarity() {
   return (
-    <SectionWrapper>
+    <SectionWrapper className="bg-secondary/[0.04]">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <p className="text-sm font-semibold uppercase tracking-widest text-secondary">
           The Value of Financial Clarity

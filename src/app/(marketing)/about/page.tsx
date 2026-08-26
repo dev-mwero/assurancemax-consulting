@@ -61,7 +61,7 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper className="bg-secondary/[0.04]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-foreground">
             Why Work With AssuranceMax

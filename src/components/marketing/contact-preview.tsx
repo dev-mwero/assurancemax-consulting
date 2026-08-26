@@ -5,7 +5,7 @@ import { contactInfo } from "@/lib/constants";
 
 export function ContactPreview() {
   return (
-    <SectionWrapper>
+    <SectionWrapper className="bg-secondary/[0.04]">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-secondary">

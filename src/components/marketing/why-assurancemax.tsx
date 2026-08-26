@@ -49,15 +49,15 @@ const reasons = [
 
 export function WhyAssuranceMax() {
   return (
-    <SectionWrapper className="bg-muted/30">
+    <SectionWrapper className="bg-primary">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <p className="text-sm font-semibold uppercase tracking-widest text-secondary">
           Why AssuranceMax
         </p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
           A partner you can rely on
         </h2>
-        <p className="mt-4 text-muted-foreground leading-relaxed">
+        <p className="mt-4 text-white/70 leading-relaxed">
           Organisations choose AssuranceMax for our practical approach,
           professional standards, and genuine commitment to their success.
         </p>
@@ -67,14 +67,14 @@ export function WhyAssuranceMax() {
           const Icon = reason.icon;
           return (
             <div key={reason.title} className="flex gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon className="size-5 text-primary" />
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                <Icon className="size-5 text-secondary" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground">
+                <h3 className="text-base font-semibold text-white">
                   {reason.title}
                 </h3>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                <p className="mt-1 text-sm text-white/70 leading-relaxed">
                   {reason.description}
                 </p>
               </div>
