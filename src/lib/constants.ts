@@ -10,8 +10,9 @@ export const siteConfig = {
 
 export const contactInfo = {
   email: "info@assurancemax.co.ke",
-  phone: "+254 733 538 538",
+  phone: "+254733538538",
   phoneSecondary: "",
+  whatsapp: "+254733538538",
   address: {
     street: "Nairobi CBD",
     city: "Nairobi",

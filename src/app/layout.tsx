@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { WhatsAppChat } from "@/components/layout/whatsapp-chat";
 import "./globals.css";
 
 const inter = Inter({
@@ -96,6 +97,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
         {children}
+        <WhatsAppChat />
       </body>
     </html>
   );
