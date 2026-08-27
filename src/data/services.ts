@@ -8,7 +8,7 @@ export const services: Service[] = [
     description:
       "Maintain accurate, reliable financial records that give you a clear picture of your business performance.",
     icon: "Calculator",
-    image: "/images/service-accounting.jpg",
+    image: "/images/service-bookkeeping.jpg",
     benefits: [
       "Accurate financial records maintained consistently",
       "Clear visibility into business performance",

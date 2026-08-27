@@ -18,14 +18,21 @@ Professional headshot of an East African business consultant, confident smile, w
 
 ---
 
-## 3. Service Cards — Accounting & Bookkeeping
-**File:** `public/images/service-accounting.jpg`
+## 3. Service Cards — Bookkeeping
+**File:** `public/images/service-bookkeeping.jpg`
 **Dimensions:** 800x533 (3:2)
-Close-up of financial spreadsheets and calculator on a wooden desk, warm office lighting, professional accounting workspace, shallow depth of field, corporate photography
+Close-up of bookkeeping workspace: open ledger with handwritten entries, calculator, bank statements, receipts organized in folders, fountain pen, warm office lighting, professional bookkeeping desk, shallow depth of field, corporate photography
 
 ---
 
-## 4. Service Cards — Financial Management
+## 4. Service Cards — Accounting
+**File:** `public/images/service-accounting.jpg`
+**Dimensions:** 800x533 (3:2)
+Professional corporate accounting workspace: dual monitors displaying financial statements and spreadsheet analytics, GAAP/IFRS reference books neatly shelved, calculator and fountain pen on leather desk pad, subtle Kenyan flag accent, cool blue-gray color palette, natural window light, sharp 8K commercial photography
+
+---
+
+## 5. Service Cards — Financial Management
 **File:** `public/images/service-financial.jpg`
 **Dimensions:** 800x533 (3:2)
 Financial dashboard on a laptop screen showing charts and graphs, modern office desk, professional financial analysis workspace, warm lighting
@@ -39,10 +46,10 @@ Tax documents and government forms on a clean desk, pen and calculator, professi
 
 ---
 
-## 6. Service Cards — Payroll
+## 6. Service Cards — Payroll Management
 **File:** `public/images/service-payroll.jpg`
 **Dimensions:** 800x533 (3:2)
-Employee records and payroll documents on a modern desk, HR workspace, professional payroll management, clean organized office
+Employee records and payroll documents on a modern desk, HR workspace, professional payroll management, clean organized office, Kenyan payslip visible, NSSF/SHIF forms, warm natural lighting
 
 ---
 
