@@ -6,7 +6,7 @@ import { Hero } from "@/components/marketing/hero";
 import { IndustriesSection } from "@/components/marketing/industries-section";
 import { ProcessSection } from "@/components/marketing/process-section";
 import { ServicesOverview } from "@/components/marketing/services-overview";
-import { Testimonials } from "@/components/marketing/testimonials";
+
 import { TrustSection } from "@/components/marketing/trust-section";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { WhyAssuranceMax } from "@/components/marketing/why-assurancemax";
@@ -23,7 +23,6 @@ export default function HomePage() {
       <VisionMission />
       <CoreValues />
       <IndustriesSection />
-      <Testimonials />
       <CTASection />
       <ContactPreview />
     </>
