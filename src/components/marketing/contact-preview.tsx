@@ -1,8 +1,11 @@
+"use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Reveal } from "@/components/sections/reveal";
 import { contactInfo } from "@/lib/constants";
+import { ContactForm } from "@/components/forms/contact-form";
 
 export function ContactPreview() {
 	return (
@@ -72,10 +75,10 @@ export function ContactPreview() {
 						<p className="mt-1 text-sm text-muted-foreground">
 							Fill in the form and we will get back to you.
 						</p>
-						<div className="mt-6 space-y-4">
-							<p className="text-sm text-muted-foreground italic">
-								[Contact form will be rendered here]
-							</p>
+						<div className="mt-6">
+							<ContactForm />
+						</div>
+						<div className="mt-6">
 							<Link
 								href="/contact"
 								className="inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-secondary/80 transition-colors duration-200"

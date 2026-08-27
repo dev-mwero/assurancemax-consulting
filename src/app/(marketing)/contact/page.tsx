@@ -28,11 +28,11 @@ const faqs = [
     answer:
       "We begin by understanding your needs, then assess your current position, provide practical recommendations, support implementation, and remain available for ongoing guidance.",
   },
-  {
-    question: "Do you offer ongoing support?",
-    answer:
-      "Yes. We build long-term relationships with clients who need持续 financial management, governance oversight, or periodic advisory support.",
-  },
+{
+        question: "Do you offer ongoing support?",
+        answer:
+          "Yes. We build long-term relationships with clients who need ongoing financial management, governance oversight, or periodic advisory support.",
+      },
   {
     question: "How do I get started?",
     answer:
