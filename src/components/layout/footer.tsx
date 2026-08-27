@@ -23,18 +23,12 @@ const legalLinks = [
 	{ label: "Terms of Service", href: "/terms" },
 ];
 
-const coreServices = [
-	{ label: "Bookkeeping", href: "/services/accounting-bookkeeping" },
-	{ label: "Accounting", href: "/services/accounting-bookkeeping" },
-	{ label: "Payroll Management", href: "/services/payroll" },
-];
-
 export function Footer() {
 	return (
 		<footer className="relative bg-primary text-white">
 			<div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div className="grid grid-cols-1 gap-8 py-16 sm:grid-cols-2 lg:grid-cols-5">
+				<div className="grid grid-cols-1 gap-8 py-16 sm:grid-cols-2 lg:grid-cols-4">
 					<div className="sm:col-span-2 lg:col-span-1">
 						<Logo />
 						<p className="mt-4 text-sm text-white/60 leading-relaxed max-w-xs">
@@ -82,25 +76,7 @@ export function Footer() {
 
 					<div>
 						<h3 className="text-sm font-semibold text-white">
-							Core Services
-						</h3>
-						<ul className="mt-4 space-y-2.5">
-							{coreServices.map((link) => (
-								<li key={link.href}>
-									<Link
-										href={link.href}
-										className="text-sm text-white/60 hover:text-secondary transition-colors duration-200"
-									>
-										{link.label}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
-
-					<div>
-						<h3 className="text-sm font-semibold text-white">
-							All Services
+							Our Services
 						</h3>
 						<ul className="mt-4 space-y-2.5">
 							{serviceLinks.map((link) => (

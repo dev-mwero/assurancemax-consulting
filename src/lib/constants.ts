@@ -32,10 +32,11 @@ export const navLinks = [
 ] as const;
 
 export const serviceSlugs = [
-  "accounting-bookkeeping",
+  "bookkeeping",
+  "accounting",
   "financial-management",
   "tax-compliance",
-  "payroll",
+  "payroll-management",
   "governance-internal-controls",
   "business-advisory",
   "audit-support",

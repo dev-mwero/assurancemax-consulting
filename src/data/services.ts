@@ -2,9 +2,9 @@ import type { Service } from "@/types/service";
 
 export const services: Service[] = [
   {
-    id: "accounting-bookkeeping",
-    title: "Accounting & Bookkeeping",
-    slug: "accounting-bookkeeping",
+    id: "bookkeeping",
+    title: "Bookkeeping",
+    slug: "bookkeeping",
     description:
       "Maintain accurate, reliable financial records that give you a clear picture of your business performance.",
     icon: "Calculator",
@@ -17,12 +17,36 @@ export const services: Service[] = [
       "Confidence in your financial data",
     ],
     features: [
-      "Bookkeeping and transaction recording",
+      "Transaction recording and categorisation",
       "Bank reconciliation",
       "Accounts payable and receivable management",
       "General ledger maintenance",
       "Monthly and quarterly financial reporting",
       "Management accounts preparation",
+    ],
+  },
+  {
+    id: "accounting",
+    title: "Accounting",
+    slug: "accounting",
+    description:
+      "Professional accounting services including financial statement preparation, analysis, and advisory.",
+    icon: "FileText",
+    image: "/images/service-accounting.jpg",
+    benefits: [
+      "Compliant financial statements",
+      "Strategic financial insights",
+      "Regulatory compliance assurance",
+      "Tax-ready financial records",
+      "Informed decision-making support",
+    ],
+    features: [
+      "Financial statement preparation",
+      "Financial analysis and interpretation",
+      "IFRS and local GAAP compliance",
+      "Year-end accounts and adjustments",
+      "Audit coordination support",
+      "Accounting policy advisory",
     ],
   },
   {
@@ -74,9 +98,9 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "payroll",
+    id: "payroll-management",
     title: "Payroll Management",
-    slug: "payroll",
+    slug: "payroll-management",
     description:
       "Ensure accurate, timely payroll processing with full compliance with statutory requirements.",
     icon: "Users",
