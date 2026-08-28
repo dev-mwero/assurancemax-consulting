@@ -21,8 +21,8 @@ export default function AboutPage() {
       />
 
       <SectionWrapper>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          <div className="max-w-3xl">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+          <div className="px-4 lg:px-8">
             <h2 className="text-2xl font-bold text-foreground">Who We Are</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               AssuranceMax Consulting Ltd is a professional consulting firm
@@ -41,13 +41,12 @@ export default function AboutPage() {
               capacity and resources.
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl">
+          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl aspect-[4/3]">
             <Image
               src="/images/about-consultant.jpg"
               alt="AssuranceMax principal consultant"
-              width={800}
-              height={600}
-              className="w-full h-auto object-cover"
+              fill
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
           </div>
