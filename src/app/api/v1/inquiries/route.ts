@@ -1,5 +1,7 @@
 import type { NextRequest } from "next/server";
 import { errorResponse, successResponse } from "@/lib/api/responses";
+import { connectDB } from "@/lib/db";
+import { Inquiry } from "@/lib/models/inquiry";
 import { sendMail } from "@/lib/nodemailer";
 import { InquirySchema } from "@/lib/validations/inquiries";
 
@@ -25,6 +27,16 @@ export async function POST(request: NextRequest) {
       preferredContact,
       message,
     } = result.data;
+
+    await connectDB();
+    await Inquiry.create({
+      name,
+      email,
+      organization: organization || undefined,
+      serviceInterest,
+      preferredContact,
+      message,
+    });
 
     const html = `
       <h2>New Inquiry</h2>

@@ -1,5 +1,7 @@
 import type { NextRequest } from "next/server";
 import { errorResponse, successResponse } from "@/lib/api/responses";
+import { connectDB } from "@/lib/db";
+import { Subscriber } from "@/lib/models/subscriber";
 import { sendMail } from "@/lib/nodemailer";
 import { NewsletterSchema } from "@/lib/validations/newsletter";
 
@@ -18,6 +20,22 @@ export async function POST(request: NextRequest) {
     }
 
     const { email } = result.data;
+
+    await connectDB();
+
+    const existing = await Subscriber.findOne({ email });
+
+    if (existing) {
+      if (existing.status === "active") {
+        return successResponse({
+          message: "You are already subscribed.",
+        });
+      }
+      existing.status = "active";
+      await existing.save();
+    } else {
+      await Subscriber.create({ email });
+    }
 
     await sendMail({
       subject: "New Newsletter Subscription",

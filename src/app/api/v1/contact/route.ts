@@ -1,5 +1,7 @@
 import type { NextRequest } from "next/server";
 import { errorResponse, successResponse } from "@/lib/api/responses";
+import { connectDB } from "@/lib/db";
+import { Contact } from "@/lib/models/contact";
 import { sendMail } from "@/lib/nodemailer";
 import { ContactSchema } from "@/lib/validations/contact";
 
@@ -18,6 +20,16 @@ export async function POST(request: NextRequest) {
     }
 
     const { name, email, phone, organization, service, message } = result.data;
+
+    await connectDB();
+    await Contact.create({
+      name,
+      email,
+      phone: phone || undefined,
+      organization: organization || undefined,
+      service: service || undefined,
+      message,
+    });
 
     const html = `
       <h2>New Contact Form Submission</h2>
