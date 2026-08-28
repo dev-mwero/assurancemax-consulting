@@ -96,3 +96,7 @@ Deployed on [Vercel](https://vercel.com). Set environment variables in the Verce
 ## License
 
 Proprietary — AssuranceMax Consulting Ltd
+
+---
+
+Developed under the supervision of [Mwero Abdalla](http://github.com/mwero-abdalla) at [Mwenaro Labs](http://github.com/mwenaro-labs)
