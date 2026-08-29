@@ -71,6 +71,31 @@ and 4 `application/ld+json` blocks).
 
 **All audit-driven phases (0–4) are now implemented in `feat/seo-audit`.** Recommended next step: deploy and re-run `seo-engine audit` across the 5 URLs to confirm gains (readability, specificity, GEO, FAQ readiness) and capture a final baseline.
 
+### ✅ Final re-audit — production (2026-08-29 15:40)
+
+Re-ran after deploying `feat/seo-audit` to `assurancemax.co.ke`.
+
+| Page | Overall (prev → now) | Critical/High | Geo (prev → now) |
+|------|---------------------:|---------------|------------------:|
+| Home (`/`) | 84 → **88** | 0 / 0 | 65 → **80** |
+| About (`/about`) | 84 → **85** | 0 / 1 | 65 → 65 |
+| Services (`/services`) | 84 → **85** | 0 / 1 | 75 → **80** |
+| Contact (`/contact`) | 87 → **87** | 0 / 1 | 65 → **75** |
+| Service detail (`/services/bookkeeping`) | 85 → **88** | 0 / 1 | 65 → **80** |
+
+All pages: **0 critical issues**. Agent sub-scores are uniformly strong (Technical 92–95, Semantic 97, Anti-slop 88–95, Content 70–75).
+
+**What improved (validated):**
+- Overall scores up 1–4 points per page; homepage critical/technical debt fully cleared.
+- **GEO readiness rose markedly** (65→80 on home/services/detail, 65→75 on contact) — confirms Phase 4 (question headings, answer leads, KRA/ICPAK citations) worked.
+- **AI-slop dropped** on About (39→13) and Contact (30→14).
+
+**What did NOT move (and why):**
+- **Readability stayed 35/100** and **Specificity ~29/100** despite the Phase 3 rewrite. The tool's readability heuristic penalises long domain terms (governance, compliance, organisational) that are necessary for this business, and its specificity metric wants *hard numbers* (client counts, years in business, prices, case outcomes). We should not fabricate those.
+- To lift these, supply real specifics: years operating, number of clients served, typical engagement timelines, and representative price ranges. Add them to About/Services copy and the FAQ answers.
+
+**Optional further lifts:** add more concrete stats/case outcomes to copy; expand FAQ sets per service; consider a locations/service-area page for local SEO.
+
 ## Score summary
 
 | Page | Overall | Critical | High | Medium | Low | Technical | Semantic | Geo | Anti-slop | Content |
