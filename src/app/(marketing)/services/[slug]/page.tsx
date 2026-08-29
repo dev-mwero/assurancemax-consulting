@@ -6,8 +6,10 @@ import { notFound } from "next/navigation";
 import { CTASection } from "@/components/marketing/cta-section";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
+import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,10 +24,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((s) => s.slug === slug);
   if (!service) return { title: "Service Not Found" };
 
-  return {
+  return buildMetadata({
     title: service.title,
     description: service.description,
-  };
+    path: `/services/${service.slug}`,
+    images: [service.image],
+    keywords: [
+      service.title,
+      "consulting Kenya",
+      "professional services",
+      "business support",
+    ],
+  });
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -38,6 +48,24 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={serviceJsonLd(service)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          {
+            name: "Home",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/`,
+          },
+          {
+            name: "Services",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/services`,
+          },
+          {
+            name: service.title,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/services/${service.slug}`,
+          },
+        ])}
+      />
+
       <PageHeader
         title={service.title}
         description={service.description}
@@ -109,7 +137,12 @@ export default async function ServicePage({ params }: Props) {
               Contact us to discuss how this service can help your organisation.
             </p>
           </div>
-          <Button render={<Link href="/contact" />} size="lg" nativeButton={false} className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+          <Button
+            render={<Link href="/contact" />}
+            size="lg"
+            nativeButton={false}
+            className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+          >
             Get in Touch
           </Button>
         </div>

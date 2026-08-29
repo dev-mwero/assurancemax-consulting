@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { contactInfo, siteConfig } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms of Service",
   description:
     "Terms and conditions governing the provision of professional consulting services by AssuranceMax Consulting Ltd.",
-};
+  path: "/terms",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   const effectiveDate = "27 August 2026";

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke";
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -10,24 +10,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+      images: [`${baseUrl}/og-image.png`],
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [`${baseUrl}/og-image.png`],
     },
     {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+      images: [`${baseUrl}/og-image.png`],
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [`${baseUrl}/og-image.png`],
     },
     {
       url: `${baseUrl}/privacy`,
@@ -48,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+    images: [`${baseUrl}${service.image}`],
   }));
 
   return [...staticPages, ...servicePages];

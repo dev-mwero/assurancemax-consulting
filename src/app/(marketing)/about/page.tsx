@@ -4,16 +4,38 @@ import { CoreValues } from "@/components/marketing/core-values";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
     "Learn about AssuranceMax Consulting Ltd — our vision, mission, values, and approach to professional consulting.",
-};
+  path: "/about",
+  keywords: [
+    "about AssuranceMax",
+    "consulting firm Kenya",
+    "company values",
+    "business advisory team",
+  ],
+});
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          {
+            name: "Home",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/`,
+          },
+          {
+            name: "About",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/about`,
+          },
+        ])}
+      />
+
       <PageHeader
         title="About AssuranceMax"
         description="Professional consulting in financial management, governance, compliance, and business transformation."
@@ -30,15 +52,15 @@ export default function AboutPage() {
               compliance, business advisory, and business transformation.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              We work with organisations that need professional support to improve
-              their financial processes, strengthen governance, meet statutory
-              obligations, and prepare for sustainable growth.
+              We work with organisations that need professional support to
+              improve their financial processes, strengthen governance, meet
+              statutory obligations, and prepare for sustainable growth.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Our approach is practical and client-focused. We listen first,
-              understand your specific situation, and then provide recommendations
-              that can actually be implemented within your organisation&apos;s
-              capacity and resources.
+              understand your specific situation, and then provide
+              recommendations that can actually be implemented within your
+              organisation&apos;s capacity and resources.
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl aspect-[4/3]">

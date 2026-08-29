@@ -5,17 +5,43 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { ServiceCard } from "@/components/marketing/service-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
+import { JsonLd } from "@/components/seo/json-ld";
 import { services } from "@/data/services";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
     "Explore AssuranceMax consulting services — financial management, accounting, tax compliance, payroll, governance, business advisory, and audit support.",
-};
+  path: "/services",
+  keywords: [
+    "consulting services",
+    "financial management",
+    "accounting",
+    "tax compliance",
+    "payroll",
+    "governance",
+    "business advisory",
+    "audit support",
+  ],
+});
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          {
+            name: "Home",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/`,
+          },
+          {
+            name: "Services",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/services`,
+          },
+        ])}
+      />
+
       <PageHeader
         title="Our Services"
         description="Professional consulting services designed to strengthen your financial management, governance, and organisational performance."

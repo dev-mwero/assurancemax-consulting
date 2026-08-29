@@ -10,6 +10,20 @@ import { ServicesOverview } from "@/components/marketing/services-overview";
 import { TrustSection } from "@/components/marketing/trust-section";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { WhyAssuranceMax } from "@/components/marketing/why-assurancemax";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  path: "/",
+  keywords: [
+    "consulting Kenya",
+    "financial management",
+    "accounting services",
+    "tax compliance Kenya",
+    "governance",
+    "business advisory",
+    "Nairobi consultants",
+  ],
+});
 
 export default function HomePage() {
   return (

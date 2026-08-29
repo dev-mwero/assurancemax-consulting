@@ -4,7 +4,7 @@ export const siteConfig = {
   slogan: "Where Expertise Inspires Confidence",
   description:
     "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke",
   locale: "en_KE",
 } as const;
 

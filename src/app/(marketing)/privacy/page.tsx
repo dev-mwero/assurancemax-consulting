@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { contactInfo, siteConfig } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
   description:
     "Privacy policy for AssuranceMax Consulting Ltd — how we collect, use, and protect your personal data in accordance with Kenyan law.",
-};
+  path: "/privacy",
+  noIndex: true,
+});
 
 export default function PrivacyPage() {
   const effectiveDate = "27 August 2026";

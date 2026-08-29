@@ -4,13 +4,22 @@ import Image from "next/image";
 import { ContactForm } from "@/components/forms/contact-form";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
+import { JsonLd } from "@/components/seo/json-ld";
 import { contactInfo } from "@/lib/constants";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
     "Get in touch with AssuranceMax Consulting Ltd. Book a consultation for financial management, governance, compliance, or business advisory support.",
-};
+  path: "/contact",
+  keywords: [
+    "contact AssuranceMax",
+    "consulting consultation Kenya",
+    "book a consultant",
+    "Nairobi consulting contact",
+  ],
+});
 
 const faqs = [
   {
@@ -28,11 +37,11 @@ const faqs = [
     answer:
       "We begin by understanding your needs, then assess your current position, provide practical recommendations, support implementation, and remain available for ongoing guidance.",
   },
-{
-        question: "Do you offer ongoing support?",
-        answer:
-          "Yes. We build long-term relationships with clients who need ongoing financial management, governance oversight, or periodic advisory support.",
-      },
+  {
+    question: "Do you offer ongoing support?",
+    answer:
+      "Yes. We build long-term relationships with clients who need ongoing financial management, governance oversight, or periodic advisory support.",
+  },
   {
     question: "How do I get started?",
     answer:
@@ -48,6 +57,19 @@ const faqs = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          {
+            name: "Home",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/`,
+          },
+          {
+            name: "Contact",
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke"}/contact`,
+          },
+        ])}
+      />
+
       <PageHeader
         title="Contact Us"
         description="Ready for professional consulting support? Let us discuss your needs."

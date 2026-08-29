@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { WhatsAppChat } from "@/components/layout/whatsapp-chat";
+import { JsonLd } from "@/components/seo/json-ld";
+import { defaultOgImage, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation in Kenya.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke",
   ),
   icons: {
     icon: [
@@ -33,6 +35,9 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://assurancemax.co.ke",
+  },
   openGraph: {
     type: "website",
     locale: "en_KE",
@@ -40,12 +45,21 @@ export const metadata: Metadata = {
     title: "AssuranceMax Consulting Ltd — Where Expertise Inspires Confidence",
     description:
       "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation.",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "AssuranceMax Consulting Ltd",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AssuranceMax Consulting Ltd — Where Expertise Inspires Confidence",
     description:
       "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation.",
+    images: [defaultOgImage],
   },
   robots: {
     index: true,
@@ -54,36 +68,11 @@ export const metadata: Metadata = {
 };
 
 function OrganizationJsonLd() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "AssuranceMax Consulting Ltd",
-    slogan: "Where Expertise Inspires Confidence",
-    description:
-      "Professional consulting services in financial management, accounting, governance, compliance, business advisory, and business transformation.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-    areaServed: {
-      "@type": "Country",
-      name: "Kenya",
-    },
-    serviceType: [
-      "Financial Management",
-      "Accounting",
-      "Tax Compliance",
-      "Payroll Management",
-      "Governance",
-      "Business Advisory",
-      "Audit Support",
-    ],
-  };
+  return <JsonLd data={organizationJsonLd()} />;
+}
 
-  return (
-    // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data requires dangerouslySetInnerHTML
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+function WebsiteJsonLd() {
+  return <JsonLd data={websiteJsonLd()} />;
 }
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -94,6 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <OrganizationJsonLd />
+        <WebsiteJsonLd />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
         {children}
