@@ -23,6 +23,7 @@ export function buildMetadata({
   images,
   keywords,
   noIndex = false,
+  absolute = false,
 }: {
   title?: string;
   description?: string;
@@ -30,9 +31,14 @@ export function buildMetadata({
   images?: string[];
   keywords?: string[];
   noIndex?: boolean;
+  absolute?: boolean;
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const fullTitle = title ? `${title} | ${siteConfig.name}` : undefined;
+  const fullTitle = title
+    ? absolute
+      ? title
+      : `${title} | ${siteConfig.name}`
+    : undefined;
   const ogImages = (images?.length ? images : [defaultOgImage]).map((src) => ({
     url: src,
     width: 1200,
@@ -41,7 +47,7 @@ export function buildMetadata({
   }));
 
   return {
-    title,
+    title: absolute && title ? { absolute: title } : title,
     description,
     keywords: keywords ?? siteKeywords,
     alternates: {

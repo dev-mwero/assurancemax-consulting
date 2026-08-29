@@ -11,8 +11,11 @@ import { TrustSection } from "@/components/marketing/trust-section";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { WhyAssuranceMax } from "@/components/marketing/why-assurancemax";
 import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata = buildMetadata({
+  title: `${siteConfig.name} — ${siteConfig.slogan}`,
+  absolute: true,
   path: "/",
   keywords: [
     "consulting Kenya",
