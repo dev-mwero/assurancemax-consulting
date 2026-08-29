@@ -84,6 +84,22 @@ export default function ServicesPage() {
         </div>
       </SectionWrapper>
 
+      <SectionWrapper className="bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-foreground">
+            Standards and compliance
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Our services are delivered with Kenyan regulatory requirements in
+            mind, including the Companies Act 2015, the Tax Procedures Act, and
+            KRA obligations such as VAT, PAYE, and corporate tax. Where
+            statutory audit or assurance is needed, we work alongside
+            ICPAK-aligned practitioners to keep your records and controls
+            compliant.
+          </p>
+        </div>
+      </SectionWrapper>
+
       <CTASection />
       <FaqSection faqs={servicesFaqs} title="Services FAQs" />
     </>

@@ -64,7 +64,12 @@ and 4 `application/ld+json` blocks).
 - Removed AI-typical words ("empower", "robust") and added Kenya-specific specifics (KRA, statutory obligations, "businesses across Kenya").
 - This targets the audit's readability (35/100) and low-specificity (high severity) findings.
 
-**Remaining work (Phase 4):** improve GEO signals — question-driven H2/H3, list/definition answer blocks, and add citations/references (KRA, ICPAK, statutory frameworks) to lift chunkability, answer density, and citation readiness. Re-audit after deploy to confirm readability/specificity gains.
+**Phase 4 — DONE (implemented, pending deploy + re-audit):**
+- Service detail pages: reframed H2s as questions ("What are the benefits of…?" / "What does our … service include?"), added a direct-answer lead paragraph, and a "Regulatory frameworks we align with" block citing the Companies Act 2015, Tax Procedures Act, KRA (VAT/PAYE/corporate tax), and ICPAK.
+- Services overview page: added a "Standards and compliance" block citing the same Kenyan frameworks.
+- Targets GEO signals: question-driven headings, answer density, chunkability, and citation readiness.
+
+**All audit-driven phases (0–4) are now implemented in `feat/seo-audit`.** Recommended next step: deploy and re-run `seo-engine audit` across the 5 URLs to confirm gains (readability, specificity, GEO, FAQ readiness) and capture a final baseline.
 
 ## Score summary
 

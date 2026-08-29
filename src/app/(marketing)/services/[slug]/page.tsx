@@ -91,9 +91,17 @@ export default async function ServicePage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <p className="max-w-3xl text-lg text-muted-foreground leading-relaxed">
+          {service.description} It is built for businesses, non-profits, and
+          growing enterprises in Kenya that need reliable, compliant support
+          without maintaining a full in-house finance team.
+        </p>
+
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Benefits</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              What are the benefits of {service.title.toLowerCase()}?
+            </h2>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Here is what this service delivers for your organisation.
             </p>
@@ -110,7 +118,7 @@ export default async function ServicePage({ params }: Props) {
           </div>
           <div>
             <h2 className="text-2xl font-bold text-foreground">
-              What We Cover
+              What does our {service.title.toLowerCase()} service include?
             </h2>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Our {service.title.toLowerCase()} service includes:
@@ -126,6 +134,19 @@ export default async function ServicePage({ params }: Props) {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-12 rounded-2xl border border-border/60 bg-muted/40 p-6">
+          <h2 className="text-xl font-bold text-foreground">
+            Regulatory frameworks we align with
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            Our work reflects Kenyan requirements, including the Companies Act
+            2015, the Tax Procedures Act, and KRA filing obligations (VAT, PAYE,
+            and corporate tax). Where assurance or statutory audit is required,
+            we coordinate with ICPAK-aligned practitioners so your records and
+            controls stand up to scrutiny.
+          </p>
         </div>
       </SectionWrapper>
 
