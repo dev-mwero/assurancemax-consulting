@@ -18,7 +18,7 @@ export function CTASection() {
 			<div className="absolute inset-0">
 				<Image
 					src="/images/cta-handshake.jpg"
-					alt=""
+					alt="AssuranceMax Consulting Ltd representatives shaking hands with a client during a consultation"
 					width={1200}
 					height={600}
 					className="w-full h-full object-cover opacity-20"
