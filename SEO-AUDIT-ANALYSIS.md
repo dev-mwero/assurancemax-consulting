@@ -17,6 +17,44 @@ The remaining "No structured data terminology" finding is a **likely false posit
 
 **Action required:** deploy the title fix, then re-run the audit to confirm the homepage critical clears. Content-quality findings below are independent of this and remain valid.
 
+### ⚠️ Preview-URL re-run was INVALID (2026-08-29 14:52)
+
+Attempted to re-run the audit against the Vercel **preview** URL
+`assurancemax-consulting-8vc1dc38m-abdallas-projects-3d7f1625.vercel.app`.
+It returned uniformly low scores (74/100, "all images missing alt", "no
+structured data found", "missing OG description/URL"). Investigation showed the
+preview is **behind Vercel authentication** — both `curl` and the tool were
+redirected to `https://vercel.com/login`, so the audit analyzed Vercel's login
+page, not the site. **Those reports were discarded.**
+
+Valid audit targets require a publicly reachable URL. Options:
+- Deploy `feat/seo-audit` to the **production** domain (`assurancemax.co.ke`) and re-audit that.
+- Or disable Vercel **Deployment Protection** on the preview (Project → Settings → Deployment Protection) so the tool can fetch it, then re-run against the preview link.
+
+### ✅ Validated production audit (2026-08-29 15:03)
+
+Re-ran against the public production domain `https://assurancemax.co.ke` (after
+deploying `feat/seo-audit` there). **All critical issues are resolved** — the
+homepage missing-title bug is gone, confirmed both by the audit and by a direct
+`curl` (the live `<head>` now contains `<title>`, `og:title`, `twitter:title`,
+and 4 `application/ld+json` blocks).
+
+| Page | Overall | Critical | High | Medium | Low |
+|------|--------:|---------:|-----:|-------:|----:|
+| Home (`/`) | 84 | 0 | 0 | 15 | 1 |
+| About (`/about`) | 84 | 0 | 1 | 14 | 1 |
+| Services (`/services`) | 84 | 0 | 1 | 13 | 1 |
+| Contact (`/contact`) | 87 | 0 | 1 | 11 | 1 |
+| Service detail (`/services/bookkeeping`) | 85 | 0 | 0 | 15 | 2 |
+
+**Phase 1 status — DONE in code, validated live:**
+- Homepage `<title>` / `og:title` / `twitter:title` restored (commit `ac1db7f`).
+- CTA background image descriptive alt added (commit `edb17d1`) — verified live; no empty `alt` remains.
+- The lingering "1 image missing alt" per page is an inline `<svg>` icon (the known `noSvgWithoutTitle` item), not an `<img>` — low priority.
+- "No structured data terminology" remains a tool false positive (JSON-LD is present and valid).
+
+**Remaining work is content/quality (Phases 2–4):** add FAQPage schema + FAQ sections, raise readability (35/100) and specificity (high severity), and improve GEO signals (chunkability, answer density, FAQ readiness).
+
 ## Score summary
 
 | Page | Overall | Critical | High | Medium | Low | Technical | Semantic | Geo | Anti-slop | Content |
