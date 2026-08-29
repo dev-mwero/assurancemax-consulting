@@ -126,7 +126,7 @@ export const services: Service[] = [
     title: "Governance & Internal Controls",
     slug: "governance-internal-controls",
     description:
-      "Strengthen accountability, improve processes, and build robust internal control systems.",
+      "Strengthen accountability, improve processes, and build reliable internal control systems.",
     icon: "ShieldCheck",
     image: "/images/service-governance.jpg",
     benefits: [

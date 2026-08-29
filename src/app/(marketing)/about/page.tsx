@@ -47,20 +47,19 @@ export default function AboutPage() {
           <div className="px-4 lg:px-8">
             <h2 className="text-2xl font-bold text-foreground">Who We Are</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              AssuranceMax Consulting Ltd is a professional consulting firm
+              AssuranceMax Consulting Ltd is a Kenyan consulting firm
               specialising in financial management, accounting, governance,
-              compliance, business advisory, and business transformation.
+              compliance, and business advisory.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              We work with organisations that need professional support to
-              improve their financial processes, strengthen governance, meet
-              statutory obligations, and prepare for sustainable growth.
+              We help businesses, non-profits, and growing enterprises improve
+              financial processes, strengthen governance, meet KRA and statutory
+              obligations, and prepare for sustainable growth.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Our approach is practical and client-focused. We listen first,
-              understand your specific situation, and then provide
-              recommendations that can actually be implemented within your
-              organisation&apos;s capacity and resources.
+              understand your situation, then recommend steps you can implement
+              with the resources you have.
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl aspect-[4/3]">
@@ -81,16 +80,13 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-foreground">Our Approach</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Every engagement begins with understanding. We take time to learn
-            about your business, your challenges, and your objectives before
-            suggesting any solution. This ensures our recommendations are
-            relevant, practical, and aligned to your goals.
+            Every engagement begins with understanding. We learn about your
+            business, challenges, and objectives before suggesting a solution,
+            so our recommendations stay relevant and practical.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            We believe in building long-term relationships based on trust,
-            professionalism, and results. Our role is not just to advise but to
-            support implementation and help your organisation sustain
-            improvements over time.
+            We build long-term relationships based on trust, professionalism,
+            and results. We support implementation so improvements last.
           </p>
         </div>
       </SectionWrapper>

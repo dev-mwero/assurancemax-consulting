@@ -46,18 +46,16 @@ export default function ServicesPage() {
 
       <PageHeader
         title="Our Services"
-        description="Professional consulting services designed to strengthen your financial management, governance, and organisational performance."
+        description="Consulting services in Kenya that strengthen your financial management, governance, and performance."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
       <SectionWrapper>
         <div className="max-w-3xl mb-12">
           <p className="text-muted-foreground leading-relaxed">
-            We offer a range of consulting services that help organisations
-            manage their finances, strengthen governance, meet compliance
-            requirements, and improve overall performance. Each service is
-            delivered with professionalism, practical understanding, and a focus
-            on your specific needs.
+            We offer consulting services that help you manage finances,
+            strengthen governance, meet compliance requirements, and improve
+            performance. Each service is tailored to your needs.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

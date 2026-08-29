@@ -59,7 +59,12 @@ and 4 `application/ld+json` blocks).
 - Added `FaqSection` component (Accordion with `hiddenUntilFound` so answers stay in the DOM for crawlers + FAQPage JSON-LD).
 - Rendered on Home, Services, and service detail pages. Build confirms `FAQPage` JSON-LD on all three.
 
-**Remaining work is content/quality (Phases 3–4):** raise readability (35/100) and specificity (high severity), and improve GEO signals (chunkability, answer density, FAQ readiness). Re-audit after deploy to confirm FAQPage rich-result eligibility.
+**Phase 3 — DONE (implemented, pending deploy + re-audit):**
+- Rewrote primary marketing copy (Hero, Trust, WhyAssuranceMax, ServicesOverview, VisionMission, FinancialClarity) and the About/Services page prose for shorter sentences and direct language.
+- Removed AI-typical words ("empower", "robust") and added Kenya-specific specifics (KRA, statutory obligations, "businesses across Kenya").
+- This targets the audit's readability (35/100) and low-specificity (high severity) findings.
+
+**Remaining work (Phase 4):** improve GEO signals — question-driven H2/H3, list/definition answer blocks, and add citations/references (KRA, ICPAK, statutory frameworks) to lift chunkability, answer density, and citation readiness. Re-audit after deploy to confirm readability/specificity gains.
 
 ## Score summary
 
