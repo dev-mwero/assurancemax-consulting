@@ -53,7 +53,13 @@ and 4 `application/ld+json` blocks).
 - The lingering "1 image missing alt" per page is an inline `<svg>` icon (the known `noSvgWithoutTitle` item), not an `<img>` — low priority.
 - "No structured data terminology" remains a tool false positive (JSON-LD is present and valid).
 
-**Remaining work is content/quality (Phases 2–4):** add FAQPage schema + FAQ sections, raise readability (35/100) and specificity (high severity), and improve GEO signals (chunkability, answer density, FAQ readiness).
+**Phase 2 — DONE (implemented, pending deploy + re-audit):**
+- Added `faqJsonLd()` builder to `src/lib/seo.ts` (FAQPage schema).
+- Added `src/data/faqs.ts` with `homeFaqs`, `servicesFaqs`, `serviceFaqs` (Kenya-specific Q&A).
+- Added `FaqSection` component (Accordion with `hiddenUntilFound` so answers stay in the DOM for crawlers + FAQPage JSON-LD).
+- Rendered on Home, Services, and service detail pages. Build confirms `FAQPage` JSON-LD on all three.
+
+**Remaining work is content/quality (Phases 3–4):** raise readability (35/100) and specificity (high severity), and improve GEO signals (chunkability, answer density, FAQ readiness). Re-audit after deploy to confirm FAQPage rich-result eligibility.
 
 ## Score summary
 

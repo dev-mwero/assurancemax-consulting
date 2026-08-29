@@ -10,8 +10,10 @@ import { ServicesOverview } from "@/components/marketing/services-overview";
 import { TrustSection } from "@/components/marketing/trust-section";
 import { VisionMission } from "@/components/marketing/vision-mission";
 import { WhyAssuranceMax } from "@/components/marketing/why-assurancemax";
-import { buildMetadata } from "@/lib/seo";
+import { FaqSection } from "@/components/sections/faq-section";
+import { homeFaqs } from "@/data/faqs";
 import { siteConfig } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} — ${siteConfig.slogan}`,
@@ -41,6 +43,7 @@ export default function HomePage() {
       <CoreValues />
       <IndustriesSection />
       <CTASection />
+      <FaqSection faqs={homeFaqs} />
       <ContactPreview />
     </>
   );

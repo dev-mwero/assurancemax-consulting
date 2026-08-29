@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CTASection } from "@/components/marketing/cta-section";
+import { FaqSection } from "@/components/sections/faq-section";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
+import { serviceFaqs } from "@/data/faqs";
 import { services } from "@/data/services";
 import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
 
@@ -161,6 +163,7 @@ export default async function ServicePage({ params }: Props) {
       </SectionWrapper>
 
       <CTASection />
+      <FaqSection faqs={serviceFaqs} title={`${service.title} FAQs`} />
     </>
   );
 }

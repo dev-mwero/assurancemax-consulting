@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CTASection } from "@/components/marketing/cta-section";
 import { ServiceCard } from "@/components/marketing/service-card";
+import { FaqSection } from "@/components/sections/faq-section";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { JsonLd } from "@/components/seo/json-ld";
+import { servicesFaqs } from "@/data/faqs";
 import { services } from "@/data/services";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
@@ -85,6 +87,7 @@ export default function ServicesPage() {
       </SectionWrapper>
 
       <CTASection />
+      <FaqSection faqs={servicesFaqs} title="Services FAQs" />
     </>
   );
 }
