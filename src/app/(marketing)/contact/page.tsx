@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactForm } from "@/components/forms/contact-form";
+import { RequestPanel } from "@/components/forms/request-panel";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -92,13 +92,14 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <h2 className="text-2xl font-bold text-foreground">
-              Send us a message
+              Get in touch
             </h2>
             <p className="mt-2 text-muted-foreground leading-relaxed">
-              Fill in the form below and we will respond promptly.
+              Choose how you would like to reach us and fill in the form below.
+              We will respond promptly.
             </p>
             <div className="mt-8">
-              <ContactForm />
+              <RequestPanel />
             </div>
           </div>
 
