@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertCircle, CheckCircle, Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { HoneypotField } from "@/components/forms/honeypot-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -98,6 +99,8 @@ export function ContactForm() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+			<HoneypotField {...register("company_website")} />
+
 			<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 				<div>
 					<Label htmlFor="name">

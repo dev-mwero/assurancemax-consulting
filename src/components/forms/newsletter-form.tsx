@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertCircle, CheckCircle, Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { HoneypotField } from "@/components/forms/honeypot-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,6 +17,7 @@ type FormState = "idle" | "loading" | "success" | "error";
 
 export function NewsletterForm() {
 	const [formState, setFormState] = useState<FormState>("idle");
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const {
 		register,
@@ -26,14 +28,15 @@ export function NewsletterForm() {
 		resolver: zodResolver(NewsletterSchema),
 	});
 
-	async function onSubmit(_data: NewsletterInput) {
+	async function onSubmit(data: NewsletterInput) {
 		setFormState("loading");
+		setErrorMessage("");
 
 		try {
 			const response = await fetch("/api/v1/newsletter", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(_data),
+				body: JSON.stringify(data),
 			});
 
 			const result = await response.json();
@@ -46,8 +49,13 @@ export function NewsletterForm() {
 
 			setFormState("success");
 			reset();
-		} catch {
+		} catch (err) {
 			setFormState("error");
+			setErrorMessage(
+				err instanceof Error
+					? err.message
+					: "Something went wrong. Please try again.",
+			);
 		}
 	}
 
@@ -66,6 +74,8 @@ export function NewsletterForm() {
 			className="flex flex-col gap-3 sm:flex-row"
 			noValidate
 		>
+			<HoneypotField {...register("company_website")} />
+
 			<div className="flex-1">
 				<Label htmlFor="newsletter-email" className="sr-only">
 					Email address
@@ -99,10 +109,10 @@ export function NewsletterForm() {
 					</>
 				)}
 			</Button>
-			{formState === "error" && (
+			{formState === "error" && errorMessage && (
 				<div className="flex items-center gap-2 text-xs text-destructive">
 					<AlertCircle className="size-3.5" />
-					Please try again.
+					{errorMessage}
 				</div>
 			)}
 		</form>

@@ -1,6 +1,7 @@
 import { z } from "zod";
+import { HoneypotSchema } from "@/lib/email/honeypot";
 
-export const ContactSchema = z.object({
+export const ContactSchema = HoneypotSchema.extend({
   name: z
     .string()
     .min(2, "Name must be at least 2 characters")
